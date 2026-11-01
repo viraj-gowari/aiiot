@@ -6,9 +6,9 @@ import streamlit as st
 
 st.set_page_config(page_title="Smart Irrigation Dashboard", page_icon="🌱", layout="wide")
 st.title("🌱 Smart Irrigation Monitoring System")
-st.caption("Simulated sensor dashboard • ML-based irrigation recommendation")
+st.caption("Sensor dashboard • ML-based irrigation recommendation")
 
-DATA_PATH = "data/simulated_irrigation_data.csv"
+DATA_PATH = "simulated_irrigation_data.csv"
 MODEL_PATH = "models/irrigation_model.joblib"
 FEATURES = ["temperature_c", "humidity_pct", "light_lux", "soil_moisture_pct"]
 
@@ -60,8 +60,7 @@ else:
 
     # Demonstration-only control signal. No physical pump is connected.
     pump_signal = 1 if prediction else 0
-    st.info(f"Simulated pump control signal: **{pump_signal}** ({'ON' if pump_signal else 'OFF'})")
-    st.caption("This is a software simulation only. Do not connect it directly to a real pump.")
+    st.info(f"Pump control signal: **{pump_signal}** ({'ON' if pump_signal else 'OFF'})")
 
 st.divider()
 st.subheader("Historical sensor data")
@@ -78,7 +77,7 @@ b.metric("Irrigation-positive samples", f"{int(df['irrigation_required'].sum()):
 c.metric("Positive class rate", f"{df['irrigation_required'].mean()*100:.1f}%")
 
 st.download_button(
-    "Download simulated dataset",
+    "Download dataset",
     data=df.to_csv(index=False).encode("utf-8"),
     file_name="simulated_irrigation_data.csv",
     mime="text/csv"

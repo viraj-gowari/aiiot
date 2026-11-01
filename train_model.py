@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-DATA_PATH = "data/simulated_irrigation_data.csv"
+DATA_PATH = "simulated_irrigation_data.csv"
 MODEL_DIR = "models"
 os.makedirs(MODEL_DIR, exist_ok=True)
 
