@@ -31,7 +31,7 @@ humidity = st.sidebar.slider("Humidity (%)", 0.0, 100.0, 45.0, 1.0)
 light = st.sidebar.slider("Light (lux)", 0, 100000, 65000, 1000)
 soil = st.sidebar.slider("Soil moisture (%)", 0.0, 100.0, 25.0, 0.5)
 
-st.subheader("Live sensor readings (simulated)")
+st.subheader("Live sensor readings")
 c1, c2, c3, c4 = st.columns(4)
 c1.metric("Temperature", f"{temperature:.1f} °C")
 c2.metric("Humidity", f"{humidity:.1f}%")
